@@ -7,7 +7,6 @@
 
 /* Whole page */
 body {
-    background-color: #09090b;
     color: #b388ff;
     font-family: Inter, system-ui, sans-serif;
 
@@ -16,6 +15,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(192,132,252,.08) 0%,
+            rgba(192,132,252,.03) 30%,
+            transparent 75%
+        ),
+        #09090b;
 }
 
 /* Content */
@@ -26,9 +33,20 @@ main {
 h1 {
     font-size: 3rem;
     font-weight: 600;
+        color: #c084fc;
+
+    text-shadow:
+        0 0 6px #c084fc,
+        0 0 12px #c084fc,
+        0 0 24px rgba(192,132,252,.6),
+        0 0 48px rgba(192,132,252,.3);
+}
+
+h1 {
+
 }
 
 p {
     margin-top: 1rem;
-    color: #8d6bd6;
+    color: rgba(179,136,255,.75);
 }
