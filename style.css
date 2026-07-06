@@ -28,6 +28,7 @@ body {
 /* Content */
 main {
     text-align: center;
+    transform: translateY(-8vh);
 }
 
 h1 {
