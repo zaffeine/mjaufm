@@ -27,8 +27,21 @@ body {
 
 /* Content */
 main {
+
     text-align: center;
-    transform: translateY(-5vh);
+
+    position: relative;
+
+    top: -5vh;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    animation: fadeIn 900ms cubic-bezier(.22,.61,.36,1) forwards;
+
+    animation-delay: 150ms;
+
 }
 
 h1 {
@@ -77,4 +90,17 @@ p a:hover {
 html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(calc(-5vh + 10px));
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-5vh);
+    }
 }
