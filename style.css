@@ -28,12 +28,12 @@ body {
 /* Content */
 main {
     text-align: center;
-    transform: translateY(-8vh);
+    transform: translateY(-5vh);
 }
 
 h1 {
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: 500;
         color: #c084fc;
 
     letter-spacing: 0.05em;
@@ -72,4 +72,9 @@ p a:hover {
 
         0 0 6px rgba(192,132,252,.4);
 
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
