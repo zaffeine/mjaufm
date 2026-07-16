@@ -30,27 +30,23 @@ nav {
 
 }
 
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
 nav a {
-
     color: rgba(192,132,252,.75);
-
     text-decoration: none;
-
-    transition:
-        color .2s ease,
-        transform .2s ease,
-        text-shadow .2s ease;
-
+    transition: .2s ease;
+    display: block;
 }
 
 nav a:hover {
-
     color: #c084fc;
-
-    transform: translateX(3px);
-
     text-shadow:
         0 0 3px #c084fc,
         0 0 6px rgba(192,132,252,.4);
-
 }
