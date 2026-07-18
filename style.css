@@ -58,6 +58,20 @@ h1 {
         0 0 24px rgba(192,132,252,.3);
         
 }
+h2 {
+    font-size: 3rem;
+    font-weight: 500;
+        color: #c084fc;
+
+    letter-spacing: 0.05em;
+        
+    text-shadow:
+        0 0 3px #c084fc,
+        0 0 6px #c084fc,
+        0 0 12px rgba(192,132,252,.6),
+        0 0 24px rgba(192,132,252,.3);
+        
+}
 
 p {
     margin-top: 1rem;
