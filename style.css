@@ -50,10 +50,10 @@ h1 {
     letter-spacing: 0.05em;
         
     text-shadow:
-        0 0 3px #c084fc,
-        0 0 6px #c084fc,
-        0 0 12px rgba(192,132,252,.6),
-        0 0 24px rgba(192,132,252,.3);
+        0 0 2px #c084fc,
+        0 0 8px #c084fc,
+        0 0 28px rgba(192,132,252,.6),
+        0 0 30px rgba(192,132,252,.3);
         
 }
 h2 {
@@ -64,10 +64,10 @@ h2 {
     letter-spacing: 0.05em;
         
     text-shadow:
-        0 0 3px #c084fc,
-        0 0 6px #c084fc,
-        0 0 12px rgba(192,132,252,.6),
-        0 0 24px rgba(192,132,252,.3);
+        0 0 2px #c084fc,
+        0 0 8px #c084fc,
+        0 0 28px rgba(192,132,252,.6),
+        0 0 30px rgba(192,132,252,.3);
         
 }
 
