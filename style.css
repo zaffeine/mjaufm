@@ -105,6 +105,24 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.broadcast {
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+
+    font-size: 0.8rem;
+    opacity: 0.55;
+    font-style: italic;
+}
+
+.broadcast a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.broadcast a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
 
 /* Animations */
 @keyframes fadeIn {
