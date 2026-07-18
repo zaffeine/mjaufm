@@ -136,11 +136,11 @@ html {
     object-fit: cover;
     opacity: 0.2;
     filter:
-    blur(6px)
-    brightness(1)
-    contrast(1.4)
-    saturate(1.25);
-    transform: scale(1);
+    blur(8px)
+    brightness(.65)
+    contrast(1.8)
+    saturate(.9);
+    transform: scale(.9);
 }
 
 .bg::after {
