@@ -42,6 +42,11 @@ main {
 
 }
 
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 h1 {
     font-size: 8rem;
     font-weight: 500;
@@ -74,8 +79,8 @@ h2 {
 p {
     margin-top: 1rem;
     color: rgba(179,136,255,.75);
-    opacity: .75;
-    font-size: 1rem;
+    opacity: .55;
+    font-size: 1.5rem;
 }
 
 p a {
@@ -93,23 +98,17 @@ p a:hover {
     color: #c084fc;
 
     text-shadow:
-
         0 0 3px #c084fc,
-
         0 0 6px rgba(192,132,252,.4);
 
 }
 
-html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 .broadcast {
     margin-top: 0.25rem;
     margin-bottom: 1.5rem;
 
     font-size: 1.55rem;
-    opacity: 0.55;
+    opacity: .55;
     font-style: italic;
 }
 
@@ -121,6 +120,89 @@ html {
 .broadcast a:hover {
     opacity: 1;
     text-decoration: underline;
+}
+
+.more {
+    margin-top: 0.75rem;
+    display: inline-block;
+    text-align: center;
+    opacity: .55;
+    font-size: 1.2rem;
+}
+
+.more summary {
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+
+    color: rgba(192,132,252,.75);
+    transition: .2s ease;
+    text-shadow: none;
+}
+
+.more summary::-webkit-details-marker {
+    display: none;
+}
+
+.more summary:hover,
+.more summary:focus-visible {
+    color: #c084fc;
+    text-shadow:
+        0 0 3px #c084fc,
+        0 0 6px rgba(192,132,252,.4);
+}
+
+.more[open] summary {
+    color: #c084fc;
+    text-shadow:
+        0 0 3px #c084fc,
+        0 0 6px rgba(192,132,252,.35);
+}
+
+.more-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+
+    margin-top: 0;
+
+    max-height: 0;
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform: translateY(-8px);
+
+    transition:
+        max-height .35s ease,
+        opacity .25s ease,
+        transform .35s cubic-bezier(.22,.61,.36,1),
+        margin-top .35s ease;
+
+    font-size: .92rem;
+}
+
+.more[open] .more-links {
+    max-height: 250px;
+
+    margin-top: .4rem;
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.more-links a {
+    color: rgba(192,132,252,.75);
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+.more-links a:hover {
+    color: #c084fc;
+    text-shadow:
+        0 0 3px #c084fc,
+        0 0 6px rgba(192,132,252,.4);
 }
 
 .bg {
