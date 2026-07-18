@@ -24,21 +24,19 @@ body {
 /* Content */
 main {
 
-    text-align: center;
-
     position: relative;
 
-    z-index: 1;
-
-    top: -5vh;
+    text-align: center;
 
     opacity: 0;
 
-    transform: translateY(10px);
+    transform: translateY(-5vh);
 
     animation: fadeIn 900ms cubic-bezier(.22,.61,.36,1) forwards;
 
     animation-delay: 150ms;
+
+    z-index: 1;
 
 }
 
@@ -126,7 +124,7 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.12;
+    opacity: .3;
     filter: blur(2px) brightness(0.7);
 }
 
