@@ -135,10 +135,12 @@ html {
     height: 100%;
     object-fit: cover;
     opacity: 0.2;
+    mix-blend-mode: screen;
+
     filter:
     blur(8px)
     brightness(.65)
-    contrast(1.8)
+    contrast(2)
     saturate(.9);
     transform: scale(.9);
 }
