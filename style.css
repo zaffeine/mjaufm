@@ -30,8 +30,6 @@ main {
 
     opacity: 0;
 
-    transform: translateY(-5vh);
-
     animation: fadeIn 900ms cubic-bezier(.22,.61,.36,1) forwards;
 
     animation-delay: 150ms;
