@@ -205,6 +205,29 @@ p a:hover {
         0 0 6px rgba(192,132,252,.4);
 }
 
+.about-link {
+    position: fixed;
+
+    right: 24px;
+    bottom: 20px;
+
+    font-size: 0.75rem;
+
+    color: rgba(192,132,252,.35);
+
+    text-decoration: none;
+
+    transition: .2s ease;
+}
+
+.about-link:hover {
+    color: #c084fc;
+
+    text-shadow:
+        0 0 3px #c084fc,
+        0 0 6px rgba(192,132,252,.4);
+}
+
 .bg {
     position: fixed;
     inset: 0;
