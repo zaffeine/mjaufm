@@ -141,7 +141,6 @@ html {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(9, 9, 11, 0.82);
 }
 
 /* Animations */
