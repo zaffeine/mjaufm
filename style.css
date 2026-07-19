@@ -267,3 +267,56 @@ p a:hover {
         transform: translateY(-5vh);
     }
 }
+
+@media (max-width: 700px) {
+    body {
+        overflow: auto;
+        min-height: 100svh;
+        padding: 24px 16px;
+    }
+
+    main {
+        transform: none;
+        width: 100%;
+        max-width: 360px;
+        padding-top: 10vh;
+    }
+
+    h1 {
+        font-size: clamp(2.2rem, 14vw, 3rem);
+    }
+
+    h2 {
+        font-size: clamp(0.95rem, 5vw, 1.1rem);
+    }
+
+    .broadcast {
+        font-size: 0.75rem;
+    }
+
+    .more {
+        font-size: 1rem;
+    }
+
+    .more-links {
+        font-size: 0.85rem;
+    }
+
+    .about-link {
+        position: static;
+        display: block;
+        margin-top: 2rem;
+        text-align: center;
+        opacity: 0.5;
+    }
+
+    .bg video {
+        opacity: 0.06;
+        filter: blur(12px) brightness(0.5) saturate(0);
+        transform: scale(1.7);
+    }
+
+    .stars {
+        opacity: 0.45;
+    }
+}
