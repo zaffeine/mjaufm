@@ -26,7 +26,7 @@
 
     <main>
 
-        <h2>Faceit</h2>
+        <h2>faceit</h2>
 
         <p>
             I play a lot of CS, I occassionally play on faceit, here's my profile.
@@ -39,7 +39,7 @@
 </html>
 
 <script>
-  fetch("/functions/api/faceit")
+  fetch("/api/faceit")
     .then(r => r.json())
     .then(data => {
       document.getElementById("name").textContent = data.nickname;
