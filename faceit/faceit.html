@@ -1,14 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
 
-    <title>FaceIT — Mjau FM</title>
+    <title>signal — Mjau FM</title>
 
     <link rel="stylesheet" href="../main.css">
 
     <link rel="icon" href="../assets/favicon.png">
 
 </head>
+
+<body>
+
+    <div class="stars"></div>
+
+    <div class="bg">
+        <video autoplay muted loop playsinline>
+            <source src="../assets/background.webm" type="video/webm">
+        </video>
+    </div>
+
+    <main>
+
+        <h2>Faceit</h2>
+
+        <p>
+            I play a lot of CS, I occassionally play on faceit, here's my profile.
+        </p>
+
+    </main>
+
+</body>
+
+</html>
 
 <script>
   fetch("/api/faceit")
