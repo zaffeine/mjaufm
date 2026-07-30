@@ -1,0 +1,23 @@
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>FaceIT — Mjau FM</title>
+
+    <link rel="stylesheet" href="../main.css">
+
+    <link rel="icon" href="../assets/favicon.png">
+
+</head>
+
+<script>
+  fetch("/api/faceit")
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById("name").textContent = data.nickname;
+      document.getElementById("elo").textContent = data.games.cs2.faceit_elo;
+    });
+</script>
+
+<div id="name"></div>
+<div id="elo"></div>
