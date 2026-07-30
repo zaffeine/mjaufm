@@ -1,7 +1,7 @@
 export async function onRequest(context) {
   const apiKey = context.env.FACEIT_API_KEY;
 
-  const url = new URL("https://open.faceit.com/data/v4/USERNAME_OR_ID");
+  const url = new URL("https://open.faceit.com/data/v4/players");
   url.searchParams.set("nickname", "mjau");
 
   const res = await fetch(url, {
