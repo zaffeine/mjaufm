@@ -39,7 +39,7 @@
 </html>
 
 <script>
-  fetch("/api/faceit")
+  fetch("/functions/api/faceit")
     .then(r => r.json())
     .then(data => {
       document.getElementById("name").textContent = data.nickname;
