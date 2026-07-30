@@ -1,19 +1,21 @@
 export async function onRequest(context) {
   const apiKey = context.env.FACEIT_API_KEY;
 
-  const res = await fetch("https://open.faceit.com/data/v4/players/USERNAME_OR_ID", {
+  const url = new URL("https://open.faceit.com/data/v4/USERNAME_OR_ID");
+  url.searchParams.set("nickname", "mjau");
+
+  const res = await fetch(url, {
     headers: {
       Authorization: `Bearer ${apiKey}`,
     },
   });
 
-  if (!res.ok) {
-    return new Response("FACEIT request failed", { status: 500 });
-  }
+  const text = await res.text();
 
-  const data = await res.json();
-
-  return new Response(JSON.stringify(data), {
-    headers: { "content-type": "application/json" },
+  return new Response(text, {
+    status: res.status,
+    headers: {
+      "content-type": res.headers.get("content-type") || "text/plain",
+    },
   });
 }
