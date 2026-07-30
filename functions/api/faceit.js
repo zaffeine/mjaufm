@@ -1,7 +1,7 @@
 export async function onRequest(context) {
   const apiKey = context.env.FACEIT_API_KEY;
 
-  const res = await fetch("https://open.faceit.com/data/v4/players/mjau", {
+  const res = await fetch("https://open.faceit.com/data/v4/players/USERNAME_OR_ID", {
     headers: {
       Authorization: `Bearer ${apiKey}`,
     },
