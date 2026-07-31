@@ -24,28 +24,66 @@
         </video>
     </div>
 
-    <main>
+<main>
 
-        <h2>faceit</h2>
+    <h2>Latest Broadcast</h2>
+
+    <div class="faceit-card">
+
+        <img id="avatar" alt="FACEIT Avatar">
+
+        <h3 id="name"></h3>
 
         <p>
-            I play a lot of CS, I occassionally play on faceit, here's my profile.
+            Level <span id="level"></span>
         </p>
 
-    </main>
+        <p>
+            <span id="elo"></span> ELO
+        </p>
+
+        <p id="country"></p>
+
+        <a id="profile" target="_blank">
+            Visit Profile
+        </a>
+
+    </div>
+
+</main>
+
+<script>
+fetch("/api/faceit")
+    .then(response => response.json())
+    .then(data => {
+
+        document.getElementById("avatar").src = data.avatar;
+
+        document.getElementById("name").textContent =
+            data.nickname;
+
+        document.getElementById("level").textContent =
+            data.games.cs2.skill_level;
+
+        document.getElementById("elo").textContent =
+            data.games.cs2.faceit_elo;
+
+        const code = data.country;
+
+const flag =
+    code
+    .toUpperCase()
+    .replace(/./g, c =>
+        String.fromCodePoint(127397 + c.charCodeAt())
+    );
+
+document.getElementById("country").textContent = flag;
+            
+        document.getElementById("profile").href =
+            data.faceit_url.replace("{lang}", "en");
+    });
+</script>
 
 </body>
 
 </html>
-
-<script>
-  fetch("/api/faceit")
-    .then(r => r.json())
-    .then(data => {
-      document.getElementById("name").textContent = data.nickname;
-      document.getElementById("elo").textContent = data.games.cs2.faceit_elo;
-    });
-</script>
-
-<div id="name"></div>
-<div id="elo"></div>
