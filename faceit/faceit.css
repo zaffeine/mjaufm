@@ -1,0 +1,263 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Whole page */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Inter, system-ui, sans-serif;
+    color: #b388ff;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(192, 132, 252, .08) 0%,
+            rgba(192, 132, 252, .03) 30%,
+            transparent 75%
+        ),
+        #09090b;
+
+    overflow: hidden;
+}
+
+/* Background video */
+.bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0.08;
+    mix-blend-mode: screen;
+
+    filter:
+        blur(18px)
+        brightness(.55)
+        saturate(0);
+
+    transform: scale(1.1);
+}
+
+/* Optional star layer */
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.45;
+}
+
+/* Main content */
+main {
+    position: relative;
+    z-index: 1;
+
+    width: min(92vw, 420px);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 900ms cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+h2 {
+    font-size: clamp(2.4rem, 8vw, 3.2rem);
+    font-weight: 600;
+    color: #c084fc;
+    letter-spacing: 0.05em;
+    text-shadow:
+        0 0 2px #c084fc,
+        0 0 8px #c084fc,
+        0 0 28px rgba(192, 132, 252, .6),
+        0 0 30px rgba(192, 132, 252, .3);
+}
+
+/* Card */
+.faceit-card {
+    width: 100%;
+    padding: 2rem 1.75rem;
+    border-radius: 24px;
+
+    background: rgba(9, 9, 11, .72);
+    border: 1px solid rgba(192, 132, 252, .18);
+    box-shadow: 0 0 50px rgba(192, 132, 252, .12);
+    backdrop-filter: blur(18px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .55rem;
+}
+
+/* Avatar */
+#avatar {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    border: 2px solid rgba(205, 147, 255, .75);
+    box-shadow:
+        0 0 10px rgba(205, 147, 255, .35),
+        0 0 25px rgba(205, 147, 255, .25);
+
+    display: block;
+    margin: 0 auto 1rem;
+
+    animation: avatarGlow 4s ease-in-out infinite;
+}
+
+/* Text */
+#name {
+    margin-top: .1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #c084fc;
+    text-shadow:
+        0 0 2px #c084fc,
+        0 0 8px #c084fc,
+        0 0 18px rgba(192, 132, 252, .35);
+}
+
+.faceit-card p {
+    margin: 0;
+    font-size: 1.15rem;
+    color: rgba(179, 136, 255, .8);
+}
+
+#level,
+#elo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e9d5ff;
+    text-shadow:
+        0 0 2px rgba(192, 132, 252, .5),
+        0 0 10px rgba(192, 132, 252, .2);
+}
+
+#country {
+    margin-top: .15rem;
+    font-size: 1.2rem;
+    opacity: .9;
+}
+
+/* Links, if you add one later */
+a {
+    color: rgba(192, 132, 252, .75);
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+a:hover {
+    color: #c084fc;
+    text-shadow:
+        0 0 3px #c084fc,
+        0 0 6px rgba(192, 132, 252, .4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes avatarGlow {
+    0% {
+        box-shadow:
+            0 0 10px rgba(205, 147, 255, .25),
+            0 0 25px rgba(205, 147, 255, .18);
+    }
+
+    50% {
+        box-shadow:
+            0 0 18px rgba(205, 147, 255, .5),
+            0 0 40px rgba(205, 147, 255, .28);
+    }
+
+    100% {
+        box-shadow:
+            0 0 10px rgba(205, 147, 255, .25),
+            0 0 25px rgba(205, 147, 255, .18);
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    body {
+        min-height: 100svh;
+        padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+    }
+
+    main {
+        width: 100%;
+        max-width: 360px;
+        padding-top: 12vh;
+    }
+
+    h2 {
+        font-size: clamp(2.2rem, 14vw, 3rem);
+    }
+
+    .faceit-card {
+        padding: 1.75rem 1.25rem;
+        gap: .45rem;
+    }
+
+    #avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    #name {
+        font-size: 1.8rem;
+    }
+
+    .faceit-card p {
+        font-size: 1rem;
+    }
+
+    #level,
+    #elo {
+        font-size: 1.55rem;
+    }
+
+    .bg video {
+        opacity: 0.07;
+        filter: blur(12px) brightness(.45) saturate(0);
+        transform: scale(1.8);
+    }
+
+    .stars {
+        opacity: 0.45;
+    }
+}
