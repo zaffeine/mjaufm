@@ -10,33 +10,12 @@ export async function onRequest(context) {
   url.searchParams.set("limit", "1");
 
   const res = await fetch(url);
+  const text = await res.text();
 
-  if (!res.ok) {
-    return new Response("Last.fm request failed", {
-      status: res.status,
-    });
-  }
-
-  const data = await res.json();
-  const track = data.recenttracks?.track?.[0];
-
-  if (!track) {
-    return Response.json({
-      playing: false,
-      track: null,
-    });
-  }
-
-  const image = track.image?.find(
-    (img) => img.size === "extralarge" && img["#text"]
-  )?.["#text"] || "";
-
-  return Response.json({
-    playing: track["@attr"]?.nowplaying === "true",
-    artist: track.artist?.["#text"] || "",
-    track: track.name || "",
-    album: track.album?.["#text"] || "",
-    image,
-    url: track.url || "",
+  return new Response(text, {
+    status: res.status,
+    headers: {
+      "content-type": "application/json",
+    },
   });
 }
