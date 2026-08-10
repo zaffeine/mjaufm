@@ -103,7 +103,7 @@ p a:hover {
 
 }
 
-.broadcast {
+.music {
     margin-top: 0.25rem;
     margin-bottom: 1.5rem;
 
@@ -112,12 +112,12 @@ p a:hover {
     font-style: italic;
 }
 
-.broadcast a {
+.music a {
     color: inherit;
     text-decoration: none;
 }
 
-.broadcast a:hover {
+.music a:hover {
     opacity: 1;
     text-decoration: underline;
 }
