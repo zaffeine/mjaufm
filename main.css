@@ -324,7 +324,7 @@ p a:hover {
     right: 24px;
     bottom: 20px;
 
-    font-size: 0.75rem;
+    font-size: 1rem;
 
     color: rgba(192,132,252,.35);
 
@@ -423,7 +423,7 @@ p a:hover {
         position: fixed;
         right: 16px;
         bottom: calc(16px + env(safe-area-inset-bottom));
-        font-size: 0.68rem;
+        font-size: 1rem;
         opacity: 0.45;
         z-index: 10;
     }
