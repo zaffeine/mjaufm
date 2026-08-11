@@ -2,6 +2,11 @@ async function updateNowPlaying() {
     const label = document.getElementById("now-playing-label");
     const track = document.getElementById("now-playing-track");
 
+    if (!label || !track) {
+        console.error("Now Playing elements not found.");
+        return;
+    }
+
     try {
         const response = await fetch("/api/music");
 
@@ -20,6 +25,7 @@ async function updateNowPlaying() {
 
         const artist = currentTrack.artist?.["#text"] || "Unknown Artist";
         const title = currentTrack.name || "Unknown Track";
+
         const isPlaying =
             currentTrack["@attr"]?.nowplaying === "true";
 
@@ -27,7 +33,8 @@ async function updateNowPlaying() {
             ? "Now Playing"
             : "Last Played";
 
-        track.textContent = `${artist} — ${title}`;
+        document.getElementById("now-playing-artist").textContent = artist;
+        document.getElementById("now-playing-track").textContent = title;
 
     } catch (error) {
         console.error("Music error:", error);
@@ -38,4 +45,4 @@ async function updateNowPlaying() {
 
 updateNowPlaying();
 
-setInterval(updateNowPlaying, 60000);
+setInterval(updateNowPlaying, 30000);
