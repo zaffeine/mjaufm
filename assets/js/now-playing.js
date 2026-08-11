@@ -42,7 +42,7 @@ async function updateNowPlaying() {
 
         label.textContent = isPlaying
             ? "signal acquired"
-            : "last signal";
+            : "signal log";
 
         artist.textContent = artistName;
         track.textContent = title;
