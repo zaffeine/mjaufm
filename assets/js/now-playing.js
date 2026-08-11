@@ -20,9 +20,10 @@ async function updateNowPlaying() {
         const currentTrack = data.recenttracks?.track?.[0];
 
         if (!currentTrack) {
+            music.classList.remove("signal-acquired", "signal-log");
             music.classList.add("signal-lost");
 
-            label.textContent = "signal acquired";
+            label.textContent = "dead frequency";
             artist.textContent = "";
             track.textContent = "Signal unavailable.";
 
@@ -38,11 +39,15 @@ async function updateNowPlaying() {
         const isPlaying =
             currentTrack["@attr"]?.nowplaying === "true";
 
-        music.classList.remove("signal-lost");
+        music.classList.remove("signal-lost", "signal-acquired", "signal-log");
 
-        label.textContent = isPlaying
-            ? "signal acquired"
-            : "signal log";
+        if (isPlaying) {
+            music.classList.add("signal-acquired");
+            label.textContent = "signal acquired";
+        } else {
+            music.classList.add("signal-log");
+            label.textContent = "signal log";
+        }
 
         artist.textContent = artistName;
         track.textContent = title;
@@ -50,6 +55,7 @@ async function updateNowPlaying() {
     } catch (error) {
         console.error("Music error:", error);
 
+        music.classList.remove("signal-acquired", "signal-log");
         music.classList.add("signal-lost");
 
         label.textContent = "dead frequency";

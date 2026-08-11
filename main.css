@@ -117,10 +117,6 @@ p a:hover {
 
 }
 
-.music:not(.signal-acquired) #now-playing-label {
-    animation: none;
-}
-
 .music {
     margin-top: 0.35rem;
 
@@ -150,6 +146,10 @@ p a:hover {
     color: rgba(192, 132, 252, 0.85);
     margin-right: -0.35em;
     animation: signalGlow 1.1s ease-in-out infinite;
+}
+
+.music:not(.signal-acquired) #now-playing-label {
+    animation: none;
 }
 
 .music.signal-acquired #now-playing-label {
