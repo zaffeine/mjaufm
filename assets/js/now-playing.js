@@ -2,11 +2,6 @@ async function updateNowPlaying() {
     const label = document.getElementById("now-playing-label");
     const track = document.getElementById("now-playing-track");
 
-    if (!label || !track) {
-        console.error("Now Playing elements not found.");
-        return;
-    }
-
     try {
         const response = await fetch("/api/music");
 
@@ -43,4 +38,4 @@ async function updateNowPlaying() {
 
 updateNowPlaying();
 
-setInterval(updateNowPlaying, 30000);
+setInterval(updateNowPlaying, 60000);
