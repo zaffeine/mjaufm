@@ -1,8 +1,10 @@
 async function updateNowPlaying() {
+    const music = document.querySelector(".music");
     const label = document.getElementById("now-playing-label");
+    const artist = document.getElementById("now-playing-artist");
     const track = document.getElementById("now-playing-track");
 
-    if (!label || !track) {
+    if (!music || !label || !artist || !track) {
         console.error("Now Playing elements not found.");
         return;
     }
@@ -18,27 +20,40 @@ async function updateNowPlaying() {
         const currentTrack = data.recenttracks?.track?.[0];
 
         if (!currentTrack) {
-            label.textContent = "No Broadcast";
-            track.textContent = "Nothing has come through yet.";
+            music.classList.add("signal-lost");
+
+            label.textContent = "MUSIC SIGNAL";
+            artist.textContent = "";
+            track.textContent = "Signal unavailable.";
+
             return;
         }
 
-        const artist = currentTrack.artist?.["#text"] || "Unknown Artist";
-        const title = currentTrack.name || "Unknown Track";
+        const artistName =
+            currentTrack.artist?.["#text"] || "Unknown Artist";
+
+        const title =
+            currentTrack.name || "Unknown Track";
 
         const isPlaying =
             currentTrack["@attr"]?.nowplaying === "true";
 
-        label.textContent = isPlaying
-            ? "Now Playing"
-            : "Last Played";
+        music.classList.remove("signal-lost");
 
-        document.getElementById("now-playing-artist").textContent = artist;
-        document.getElementById("now-playing-track").textContent = title;
+        label.textContent = isPlaying
+            ? "MUSIC SIGNAL"
+            : "LAST PLAYED";
+
+        artist.textContent = artistName;
+        track.textContent = title;
 
     } catch (error) {
         console.error("Music error:", error);
-        label.textContent = "Music Signal";
+
+        music.classList.add("signal-lost");
+
+        label.textContent = "MUSIC SIGNAL";
+        artist.textContent = "";
         track.textContent = "Signal unavailable.";
     }
 }
