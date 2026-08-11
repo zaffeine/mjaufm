@@ -22,7 +22,7 @@ async function updateNowPlaying() {
         if (!currentTrack) {
             music.classList.add("signal-lost");
 
-            label.textContent = "LISTENING TO";
+            label.textContent = "signal acquired";
             artist.textContent = "";
             track.textContent = "Signal unavailable.";
 
@@ -41,8 +41,8 @@ async function updateNowPlaying() {
         music.classList.remove("signal-lost");
 
         label.textContent = isPlaying
-            ? "LISTENING TO"
-            : "LISTENED TO";
+            ? "signal acquired"
+            : "last signal";
 
         artist.textContent = artistName;
         track.textContent = title;
@@ -52,9 +52,9 @@ async function updateNowPlaying() {
 
         music.classList.add("signal-lost");
 
-        label.textContent = "LISTENING TO";
+        label.textContent = "dead frequency";
         artist.textContent = "";
-        track.textContent = "SIGNAL LOST";
+        track.textContent = "";
     }
 }
 
