@@ -262,6 +262,8 @@ p a:hover {
     font-size: 1rem;
     line-height: 1.6;
     opacity: .75;
+    text-align:left;
+    max-width:420px;
 }
 
 .more {
