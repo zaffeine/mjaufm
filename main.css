@@ -266,6 +266,47 @@ p a:hover {
     max-width:420px;
 }
 
+.dns-section {
+    margin-top: 1.4rem;
+    max-width: 420px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.dns-haiku {
+    text-align: left;
+}
+
+.dns-haiku p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: .75;
+}
+
+.dns-haiku p.dns-punchline-stanza {
+    margin-top: 1.1rem;
+}
+
+.dns-cat {
+    margin: 0;
+    flex: 0 0 auto;
+
+    font-family: inherit;
+    font-size: 1.9rem;
+    line-height: 1.15;
+
+    color: rgba(192, 132, 252, 0.85);
+    text-shadow:
+        0 0 2px #c084fc,
+        0 0 6px rgba(192,132,252,.4);
+
+    white-space: pre;
+}
+
 .more {
     margin-top: 0.75rem;
     display: inline-block;
