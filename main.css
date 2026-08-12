@@ -258,6 +258,12 @@ p a:hover {
     }
 }
 
+.info-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: .75;
+}
+
 .more {
     margin-top: 0.75rem;
     display: inline-block;
